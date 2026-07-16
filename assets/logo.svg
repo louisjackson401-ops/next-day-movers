@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 104" width="250" height="104" role="img" aria-label="Next Day Movers">
+  <!-- Wordmark -->
+  <text x="2" y="54" font-family="'Sora','Gantari','Montserrat','Arial Black',Arial,sans-serif" font-size="52" font-weight="700" letter-spacing="0" fill="#F6F6F4">NEXT</text>
+  <text x="4" y="92" font-family="'Sora','Gantari','Montserrat',Arial,sans-serif" font-size="23" font-weight="600" letter-spacing="6" fill="#F6F6F4">DAY MOVERS</text>
+  <!-- Gold delivery truck (box + sloped cab + hubbed wheels) -->
+  <g transform="translate(197,11) scale(2)">
+    <g fill="none" stroke="#E9B93C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+      <path d="M15 18H9"/>
+      <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+      <circle cx="17" cy="18" r="2"/>
+      <circle cx="7" cy="18" r="2"/>
+    </g>
+    <circle cx="17" cy="18" r="0.85" fill="#E9B93C"/>
+    <circle cx="7" cy="18" r="0.85" fill="#E9B93C"/>
+  </g>
+</svg>
