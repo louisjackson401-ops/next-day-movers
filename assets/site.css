@@ -226,3 +226,38 @@ input[type=date]{color-scheme:dark}
 .contact-detail .h{font-weight:600;font-size:15px}
 .contact-detail a,.contact-detail p{color:var(--muted);font-size:14.5px;margin:2px 0 0}
 @media (max-width:820px){.contact-grid{grid-template-columns:1fr;gap:32px}}
+
+/* ---- Mobile polish (phones) ---- */
+@media (max-width:640px){
+  .section{padding:56px 20px}
+  h2.h-sec{font-size:clamp(25px,7vw,32px)}
+  .eyebrow{margin-bottom:11px}
+  .nav{padding:13px 20px}
+  .nav .logo img{height:40px}
+  /* Hero: lead with heading + CTA; drop the inline form (use the quote page) */
+  .hero-grid{padding:34px 20px 44px;gap:26px}
+  .hero h1{font-size:clamp(30px,8.4vw,40px);line-height:1.07}
+  .hero .lead{font-size:16px !important;line-height:1.6}
+  #quote{display:none}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(9,9,10,.72),rgba(9,9,10,.94))}
+  /* Inner page heroes */
+  .page-hero{padding:44px 20px 36px}
+  .page-hero h1{font-size:clamp(29px,8vw,40px)}
+  .page-hero p{font-size:15.5px}
+  .crumbs{margin-bottom:14px}
+  /* Sections */
+  .split-2{gap:30px}
+  .svc-row{gap:22px;padding:36px 0}
+  .trustbar .row{padding:18px 20px;gap:12px 24px;font-size:13.5px}
+  .cmp .card{padding:24px}
+  .step{padding:22px 20px 24px}
+  .stats{gap:16px}
+  .stats .num{font-size:32px}
+  /* Footer */
+  .foot-grid{padding:44px 20px 32px;gap:28px}
+  .foot-bottom{padding:20px 20px 26px}
+  /* Quote card (quote page) tighten */
+  .quote-card{padding:22px}
+}
+/* Guarantee no horizontal overflow on any phone */
+@media (max-width:640px){ html,body{overflow-x:hidden;max-width:100%} }
