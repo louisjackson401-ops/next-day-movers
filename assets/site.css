@@ -261,3 +261,16 @@ input[type=date]{color-scheme:dark}
 }
 /* Guarantee no horizontal overflow on any phone */
 @media (max-width:640px){ html,body{overflow-x:hidden;max-width:100%} }
+
+/* ---- Review submit block: stack on mobile ---- */
+@media (max-width:760px){
+  #revBlock{grid-template-columns:1fr !important;gap:26px !important;padding:24px !important}
+  .rev-2col{grid-template-columns:1fr !important}
+  #revBlock #submitReview{width:100%;justify-self:stretch}
+}
+
+/* ---- Floating WhatsApp button (tap to chat) ---- */
+.wa-fab{position:fixed;right:20px;bottom:24px;z-index:65;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.32);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.06)}
+.wa-fab svg{width:32px;height:32px;display:block}
+@media (max-width:860px){ .wa-fab{bottom:88px;right:16px;width:54px;height:54px} }
