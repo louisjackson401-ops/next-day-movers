@@ -61,6 +61,13 @@
     var form = $('#quoteForm');
     if (!form) return;
     var g = function (id) { return $('#' + id); };
+    // Postcode areas we cover (London, Kent, Surrey, Sussex, Essex & the near South East)
+    var servedAreas = { E:1,EC:1,N:1,NW:1,SE:1,SW:1,W:1,WC:1, BR:1,CR:1,DA:1,EN:1,HA:1,IG:1,KT:1,RM:1,SM:1,TW:1,UB:1,WD:1, ME:1,CT:1,TN:1, GU:1,RH:1, BN:1, SS:1,CM:1,CO:1, SL:1,RG:1,HP:1,AL:1,SG:1,LU:1,MK:1 };
+    function outOfArea(pc) {
+      var m = (pc || '').toUpperCase().replace(/\s+/g, '').match(/^([A-Z]{1,2})[0-9]/);
+      if (!m) return false;            // can't determine a valid UK area → don't block
+      return !servedAreas[m[1]];
+    }
     function range() {
       var p = g('qProperty').value, b = g('qBeds').value;
       if (p === 'van') return [90, 180];
@@ -80,9 +87,24 @@
       var el = g(id); if (!el) return;
       el.addEventListener('input', refresh); el.addEventListener('change', refresh);
     });
+    // Service-area notice (shown when the "moving from" postcode is outside our region)
+    var covMsg = document.createElement('p');
+    covMsg.id = 'qCoverageMsg';
+    covMsg.style.cssText = 'display:none;margin:14px 0 0;font-size:13px;line-height:1.55;color:#FFB27A;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.45);border-radius:12px;padding:12px 14px';
+    covMsg.innerHTML = 'Sorry — we only cover moves <strong>starting</strong> in London, Kent &amp; the South East, so we can’t quote a move from this area. If this postcode is within our region, please double-check it or call <a href="tel:07777622437" style="color:#FFB27A;text-decoration:underline">07777&nbsp;622437</a>.';
+    g('quoteBtn').parentNode.insertBefore(covMsg, g('quoteBtn'));
+    function checkCoverage() {
+      var oa = outOfArea(g('qFrom').value);
+      covMsg.style.display = oa ? 'block' : 'none';
+      return oa;
+    }
+    g('qFrom').addEventListener('input', checkCoverage);
+    g('qFrom').addEventListener('change', checkCoverage);
+
     g('quoteBtn').addEventListener('click', function () {
       var btn = g('quoteBtn');
       if (btn.dataset.sending === '1' || btn.dataset.submitted === '1') return;
+      if (checkCoverage()) { g('qFrom').focus(); return; }   // out of area → don't send a dead lead
       var contact = g('qContact').value.trim();
       if (contact.length < 3) { g('qContact').focus(); return; }
       btn.dataset.sending = '1';
