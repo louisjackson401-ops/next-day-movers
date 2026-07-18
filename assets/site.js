@@ -68,24 +68,69 @@
       if (!m) return false;            // can't determine a valid UK area → don't block
       return !servedAreas[m[1]];
     }
+    // Base fixed-rate pricing (from the pricing sheet — Suggested Pricing Strategy)
     function range() {
       var p = g('qProperty').value, b = g('qBeds').value;
-      if (p === 'van') return [90, 180];
-      if (p === 'waste') return [120, 320];
-      var base = { '0': [180, 280], '1': [260, 400], '2': [380, 560], '3': [540, 780], '4': [760, 1150] }[b];
+      if (p === 'van') return [120, 300];       // man & van / single item
+      if (p === 'waste') return [120, 320];     // waste clearance
+      var base = { '0': [250, 400], '1': [300, 500], '2': [500, 750], '3': [750, 1200], '4': [1200, 2000] }[b];
       var m = p === 'office' ? 1.35 : p === 'flat' ? 0.95 : 1;
       return [Math.round(base[0] * m / 10) * 10, Math.round(base[1] * m / 10) * 10];
     }
+    // Long-distance surcharge: +£1 per mile after 20 miles, using postcodes.io for distance
+    var PER_MILE = 1, FREE_MILES = 20, distMiles = null, distKey = null, distTimer;
+    function outcodeOf(pc) { pc = (pc || '').toUpperCase().replace(/\s+/g, ''); if (pc.length < 2) return ''; return pc.length > 3 ? pc.slice(0, -3) : pc; }
+    function fetchCoords(oc) {
+      return fetch('https://api.postcodes.io/outcodes/' + encodeURIComponent(oc))
+        .then(function (r) { return r.json(); })
+        .then(function (j) { return (j && j.result && typeof j.result.latitude === 'number') ? { lat: j.result.latitude, lon: j.result.longitude } : null; })
+        .catch(function () { return null; });
+    }
+    function milesBetween(a, b) {
+      var R = 3958.8, t = Math.PI / 180, dLat = (b.lat - a.lat) * t, dLon = (b.lon - a.lon) * t, la1 = a.lat * t, la2 = b.lat * t;
+      var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(la1) * Math.cos(la2) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      return 2 * R * Math.asin(Math.sqrt(h));
+    }
+    function surcharge() { return (distMiles != null && distMiles > FREE_MILES) ? Math.round((distMiles - FREE_MILES) * PER_MILE) : 0; }
+    function updateDistance() {
+      var fo = outcodeOf(g('qFrom').value), to = outcodeOf(g('qTo').value), key = fo + '>' + to;
+      if (!fo || !to) { distMiles = null; distKey = key; refresh(); return; }
+      if (fo === to) { distMiles = 0; distKey = key; refresh(); return; }
+      if (key === distKey) return;
+      distKey = key;
+      clearTimeout(distTimer);
+      distTimer = setTimeout(function () {
+        Promise.all([fetchCoords(fo), fetchCoords(to)]).then(function (r) {
+          if (distKey !== key) return;           // a newer postcode pair superseded this
+          distMiles = (r[0] && r[1]) ? Math.round(milesBetween(r[0], r[1]) * 1.3) : null;
+          refresh();
+        });
+      }, 550);
+    }
+    var distNote = document.createElement('div');
+    distNote.id = 'qDistNote';
+    distNote.style.cssText = 'display:none;font-size:12px;color:var(--muted);margin-top:5px';
+    if (g('estimateVal')) g('estimateVal').parentNode.appendChild(distNote);
     function refresh() {
       var submitted = g('quoteBtn').dataset.submitted === '1';
       var show = g('qFrom').value.trim().length > 2 || submitted;
       var box = g('estimateBox');
-      if (show) { var r = range(); g('estimateVal').textContent = '£' + r[0] + ' – £' + r[1]; box.style.display = 'flex'; }
-      else box.style.display = 'none';
+      if (!show) { box.style.display = 'none'; return; }
+      var r = range(), sc = surcharge();
+      g('estimateVal').textContent = '£' + (r[0] + sc) + ' – £' + (r[1] + sc);
+      if (distMiles != null) {
+        distNote.textContent = distMiles > FREE_MILES ? ('Approx ' + distMiles + ' miles · includes £' + sc + ' long-distance') : ('Approx ' + distMiles + ' miles · local move');
+        distNote.style.display = 'block';
+      } else { distNote.style.display = 'none'; }
+      box.style.display = 'flex';
     }
     ['qProperty', 'qBeds', 'qFrom', 'qTo', 'qName', 'qDate', 'qContact'].forEach(function (id) {
       var el = g(id); if (!el) return;
       el.addEventListener('input', refresh); el.addEventListener('change', refresh);
+    });
+    ['qFrom', 'qTo'].forEach(function (id) {
+      var el = g(id); if (!el) return;
+      el.addEventListener('input', updateDistance); el.addEventListener('change', updateDistance);
     });
     // Service-area notice (shown when the "moving from" postcode is outside our region)
     var covMsg = document.createElement('p');
@@ -118,6 +163,7 @@
         Bedrooms: g('qBeds').value,
         'Moving from': g('qFrom').value,
         'Moving to': g('qTo').value,
+        'Distance': distMiles != null ? (distMiles + ' miles (approx)') : 'not calculated',
         'Moving date': g('qDate').value,
         Name: g('qName').value,
         'Phone or email': contact,
