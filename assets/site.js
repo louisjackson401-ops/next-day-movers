@@ -22,8 +22,18 @@
   function initNav() {
     var t = $('.nav-toggle');
     if (!t) return;
-    t.addEventListener('click', function () { document.body.classList.toggle('menu-open'); });
-    $$('.mobile-menu a').forEach(function (a) { a.addEventListener('click', function () { document.body.classList.remove('menu-open'); }); });
+    t.addEventListener('click', function () {
+      var open = document.body.classList.toggle('menu-open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      t.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    $$('.mobile-menu a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        document.body.classList.remove('menu-open');
+        t.setAttribute('aria-expanded', 'false');
+        t.setAttribute('aria-label', 'Open menu');
+      });
+    });
   }
 
   /* ---- Scroll reveal ---- */
@@ -60,6 +70,7 @@
   function initQuote() {
     var form = $('#quoteForm');
     if (!form) return;
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
     var g = function (id) { return $('#' + id); };
     // Postcode areas we cover (London, Kent, Surrey, Sussex, Essex & the near South East)
     var servedAreas = { E:1,EC:1,N:1,NW:1,SE:1,SW:1,W:1,WC:1, BR:1,CR:1,DA:1,EN:1,HA:1,IG:1,KT:1,RM:1,SM:1,TW:1,UB:1,WD:1, ME:1,CT:1,TN:1, GU:1,RH:1, BN:1, SS:1,CM:1,CO:1, SL:1,RG:1,HP:1,AL:1,SG:1,LU:1,MK:1 };
@@ -272,6 +283,8 @@
   function initContact() {
     var btn = $('#cSubmit');
     if (!btn) return;
+    var cf = $('#contactForm');
+    if (cf) cf.addEventListener('submit', function (e) { e.preventDefault(); });
     var g = function (id) { return $('#' + id); };
     btn.addEventListener('click', function () {
       if (btn.dataset.sending === '1') return;
