@@ -234,7 +234,18 @@
       if (btn) btn.addEventListener('click', function () {
         var name = $('#revName').value.trim(), text = $('#revText').value.trim();
         if (!name || !text) return;
-        reviewState.user.unshift({ name: name, loc: $('#revLoc').value.trim() || 'Verified customer', text: text });
+        var loc = $('#revLoc').value.trim() || 'Verified customer';
+        // Capture the review by email so it's never lost
+        postLead({
+          _subject: 'New website review — Next Day Movers',
+          _template: 'table', _captcha: 'false',
+          Form: 'Website review',
+          Name: name,
+          'Move type & area': loc,
+          Rating: stars + ' / 5',
+          Review: text
+        });
+        reviewState.user.unshift({ name: name, loc: loc, text: text });
         reviewState.idx = 0;
         $('#revForm').style.display = 'none';
         $('#revThanksName').textContent = 'Thank you, ' + name + '!';
