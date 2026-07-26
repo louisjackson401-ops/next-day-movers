@@ -152,7 +152,7 @@ input[type=date]{color-scheme:dark}
 .cmp .list{display:flex;flex-direction:column;gap:13px;font-size:14.5px}
 .cmp .ours .list{color:#E0E0DE}.cmp .them .list{color:var(--dim)}
 .cmp .list span{display:flex;gap:11px}
-.cmp .yes{color:var(--gold);font-weight:700}.cmp .no{color:#5A5A58}
+.cmp .yes{color:var(--gold);font-weight:700}.cmp .no{color:#7C7C7A}
 @media (max-width:760px){.cmp{grid-template-columns:1fr}}
 
 /* Process steps */
