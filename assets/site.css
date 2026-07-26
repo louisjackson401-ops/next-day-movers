@@ -80,6 +80,9 @@ h2.h-sec{font-size:clamp(30px,3.4vw,44px);letter-spacing:-.025em;margin:0;font-w
 .foot-col .h{font-weight:600;color:var(--text);margin-bottom:4px}
 .foot-link{color:var(--dim);transition:color .2s}
 .foot-link:hover{color:var(--gold)}
+.foot-social{display:flex;gap:10px;margin-top:16px}
+.foot-social a{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;border:1px solid var(--line);color:var(--muted);transition:color .2s,border-color .2s,background .2s}
+.foot-social a:hover{color:#0D0D0E;background:var(--gold);border-color:var(--gold)}
 .foot-bottom{padding:22px 28px 30px;font-size:12.5px;color:#8F8F8D;border-top:1px solid rgba(255,255,255,.05)}
 @media (max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
 
