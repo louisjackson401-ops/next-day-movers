@@ -11,7 +11,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-width:320px}
 a{color:var(--gold);text-decoration:none}
 h1,h2,h3{font-family:'Sora',sans-serif}
-img{max-width:100%}
+img{max-width:100%;height:auto}
 .wrap{max-width:1200px;margin:0 auto}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
 .eyebrow.dark{color:#9C9C9A}.eyebrow.on-dark{color:var(--dim)}
