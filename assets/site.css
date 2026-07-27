@@ -16,7 +16,7 @@ h1,h2,h3{font-family:'Sora',sans-serif}
 img{max-width:100%;height:auto}
 .wrap{max-width:1200px;margin:0 auto}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
-.eyebrow.dark{color:#9C9C9A}.eyebrow.on-dark{color:var(--dim)}
+.eyebrow.dark{color:#6C6C6A}.eyebrow.on-dark{color:var(--dim)}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;border-radius:12px;cursor:pointer;font-family:inherit;transition:transform .2s,background .2s,border-color .2s,color .2s;border:1px solid transparent;text-align:center}
@@ -112,6 +112,7 @@ input[type=date]{color-scheme:dark}
 /* Hero */
 .hero{position:relative;overflow:hidden;background:#0D0D0E}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.9)}
+.hero-pic{display:block}.hero-pic img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-home{background-image:url('photos/img_6841.webp')}
 .hero-quote{background-image:url('photos/0a3b1b58-aa54-4844-8589-7d3b17e671f0.webp')}
 @media (max-width:700px){
