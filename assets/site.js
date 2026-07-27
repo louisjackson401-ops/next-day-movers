@@ -160,9 +160,12 @@
     g('quoteBtn').addEventListener('click', function () {
       var btn = g('quoteBtn');
       if (btn.dataset.sending === '1' || btn.dataset.submitted === '1') return;
+      var th = g('quoteThanks');
+      function qerr(msg, el) { if (th) { th.style.color = '#FB8A3C'; th.textContent = msg; th.style.display = 'block'; } if (el) el.focus(); }
       if (checkCoverage()) { g('qFrom').focus(); return; }   // out of area → don't send a dead lead
+      if (!g('qName').value.trim()) { qerr('Please add your name so we know who to reach.', g('qName')); return; }
       var contact = g('qContact').value.trim();
-      if (contact.length < 3) { g('qContact').focus(); return; }
+      if (contact.length < 3) { qerr('Add a phone number or email so we can confirm your fixed price.', g('qContact')); return; }
       btn.dataset.sending = '1';
       var orig = btn.textContent;
       btn.textContent = 'Sending…';
@@ -181,11 +184,10 @@
         'Estimated range': g('estimateVal') ? g('estimateVal').textContent : ''
       }).then(function (ok) {
         btn.dataset.sending = '';
-        var th = g('quoteThanks');
         if (ok) {
           btn.dataset.submitted = '1';
           btn.textContent = 'Request received ✓';
-          if (th) th.style.display = 'block';
+          if (th) { th.style.color = '#7FD49A'; th.textContent = '✓ Thanks — we’ll be in touch within the hour to confirm your fixed price.'; th.style.display = 'block'; }
         } else {
           btn.textContent = orig;
           if (th) { th.style.color = '#FB8A3C'; th.innerHTML = 'Sorry — that didn’t send. Please call <a href="tel:07777622437">07777 622437</a> or <a href="https://wa.me/447777622437">WhatsApp us</a>.'; th.style.display = 'block'; }
@@ -300,8 +302,10 @@
     btn.addEventListener('click', function () {
       if (btn.dataset.sending === '1') return;
       var name = g('cName').value.trim(), phone = g('cPhone').value.trim(), email = g('cEmail').value.trim();
-      if (!name) { g('cName').focus(); return; }
-      if (!phone && !email) { g('cPhone').focus(); return; }
+      var th = g('cThanks');
+      function cerr(msg, el) { if (th) { th.style.color = '#FB8A3C'; th.textContent = msg; th.style.display = 'block'; } if (el) el.focus(); }
+      if (!name) { cerr('Please add your name.', g('cName')); return; }
+      if (!phone && !email) { cerr('Add a phone number or email so we can reply.', g('cPhone')); return; }
       btn.dataset.sending = '1';
       var orig = btn.textContent;
       btn.textContent = 'Sending…';
@@ -313,10 +317,11 @@
         'Help with': g('cType').value, Message: g('cMsg').value
       }).then(function (ok) {
         btn.dataset.sending = '';
-        var th = g('cThanks');
         if (ok) {
           var grid = $('#contactForm .q-grid'); if (grid) grid.style.display = 'none';
           btn.style.display = 'none';
+          th.style.color = '#7FD49A';
+          th.innerHTML = '✓ Thanks — we’ve got your message and will be in touch shortly. For anything urgent, call <a href="tel:07777622437">07777 622437</a>.';
           th.style.display = 'block';
         } else {
           btn.textContent = orig;
