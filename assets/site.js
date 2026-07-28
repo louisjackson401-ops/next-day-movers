@@ -18,6 +18,62 @@
       .catch(function () { return false; });
   }
 
+  /* ---- Google Ads tag + Consent Mode v2 ---- */
+  var GADS_ID = 'AW-18354289784';
+  var GADS_CONV_LABEL = ''; // paste the conversion label (the part after "AW-…/" ) here to count quote leads
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  (function bootGtag() {
+    var granted = false;
+    try { granted = localStorage.getItem('ndm_consent') === 'granted'; } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', ad_user_data: 'denied',
+      ad_personalization: 'denied', analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', GADS_ID);
+    if (granted) gtag('consent', 'update', {
+      ad_storage: 'granted', ad_user_data: 'granted',
+      ad_personalization: 'granted', analytics_storage: 'granted'
+    });
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GADS_ID;
+    (document.head || document.documentElement).appendChild(s);
+  })();
+  function fireQuoteConversion() {
+    if (!GADS_CONV_LABEL) return;
+    gtag('event', 'conversion', { send_to: GADS_ID + '/' + GADS_CONV_LABEL });
+  }
+
+  /* ---- Cookie consent banner (drives Consent Mode) ---- */
+  function initConsent() {
+    var stored = null;
+    try { stored = localStorage.getItem('ndm_consent'); } catch (e) {}
+    if (stored === 'granted' || stored === 'denied') return;
+    var bar = document.createElement('div');
+    bar.className = 'consent';
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Cookie consent');
+    bar.innerHTML = '<p>We use cookies to measure our advertising and improve your experience. See our <a href="/cookies">Cookie Policy</a>.</p>' +
+      '<div class="consent-btns">' +
+      '<button type="button" class="btn-consent no" data-consent="denied">Decline</button>' +
+      '<button type="button" class="btn-consent yes" data-consent="granted">Accept</button></div>';
+    document.body.appendChild(bar);
+    bar.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-consent]'); if (!b) return;
+      var choice = b.getAttribute('data-consent');
+      try { localStorage.setItem('ndm_consent', choice); } catch (er) {}
+      if (choice === 'granted') gtag('consent', 'update', {
+        ad_storage: 'granted', ad_user_data: 'granted',
+        ad_personalization: 'granted', analytics_storage: 'granted'
+      });
+      if (bar.parentNode) bar.parentNode.removeChild(bar);
+    });
+  }
+
   /* ---- Mobile nav ---- */
   function initNav() {
     var t = $('.nav-toggle');
@@ -187,6 +243,7 @@
         if (ok) {
           btn.dataset.submitted = '1';
           btn.textContent = 'Request received ✓';
+          fireQuoteConversion();
           if (th) { th.style.color = '#7FD49A'; th.textContent = '✓ Thanks — we’ll be in touch within the hour to confirm your fixed price.'; th.style.display = 'block'; }
         } else {
           btn.textContent = orig;
@@ -347,7 +404,7 @@
   }
 
   function init() {
-    initNav(); initReveal(); initCounter(); initQuote(); initReviews(); initFaq(); initLightbox(); initContact(); initWhatsApp();
+    initNav(); initReveal(); initCounter(); initQuote(); initReviews(); initFaq(); initLightbox(); initContact(); initWhatsApp(); initConsent();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
