@@ -20,7 +20,7 @@
 
   /* ---- Google Ads tag + Consent Mode v2 ---- */
   var GADS_ID = 'AW-18354289784';
-  var GADS_CONV_LABEL = ''; // paste the conversion label (the part after "AW-…/" ) here to count quote leads
+  var GADS_CONV_LABEL = 'G5IOCPWmm9gcEPj4gLBE'; // "Submit lead form" conversion (quote form)
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
@@ -45,7 +45,7 @@
   })();
   function fireQuoteConversion() {
     if (!GADS_CONV_LABEL) return;
-    gtag('event', 'conversion', { send_to: GADS_ID + '/' + GADS_CONV_LABEL });
+    gtag('event', 'conversion', { send_to: GADS_ID + '/' + GADS_CONV_LABEL, value: 1.0, currency: 'GBP' });
   }
 
   /* ---- Cookie consent banner (drives Consent Mode) ---- */
