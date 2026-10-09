@@ -142,3 +142,19 @@ here with the date and who gave it.
 
 **Do not flip the flag to clear a red gate.** If a claim turns out to be
 unsupported, the copy and the schema come out instead.
+
+---
+
+## 2026-10-09 — Differentiated 6 location pages with genuine local content + AEO headings
+
+Added a factual "Moving house in {Town}" section to all six location pages
+(Bromley, Bexley, Dartford, Croydon, Maidstone, Sevenoaks): real postcode districts,
+property-type mix, parking/access realities and neighbouring areas, each under two
+question-form H3 headings ("What are parking and access like…", "Which areas…").
+
+- Resolves the Content similarity warnings (bexley≈dartford, croydon≈maidstone were 81%).
+- Clears the location-page `ai.no-question-headings` AEO warnings (visible Q&A headings).
+- Only verifiable local geography/property facts — no fabricated business claims,
+  testimonials or figures (CLAUDE.md-compliant; not town-swap).
+
+chqa: Content PASS, Schema PASS, GATE APPROVED FOR PRODUCTION.

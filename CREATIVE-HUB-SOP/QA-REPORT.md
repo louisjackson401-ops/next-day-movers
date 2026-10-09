@@ -2,9 +2,9 @@
 
 **Project:** Next Day Movers  
 **Repository:** `/Users/louisjackson/Next Day Movers web`  
-**Commit:** `69ed00e`  
-**Run:** 2026-10-09 19:27 UTC  
-**Engine:** creative-hub-qa 1.0.0 — 70 checks across 15 page(s)
+**Commit:** `ed3182f`  
+**Run:** 2026-10-09 19:35 UTC  
+**Engine:** creative-hub-qa 1.0.0 — 62 checks across 15 page(s)
 
 ---
 
@@ -15,19 +15,19 @@
 | Failures | 0 |
 | Critical | 0 |
 | High | 0 |
-| Medium | 5 |
-| Low | 25 |
-| Warnings | 30 |
+| Medium | 3 |
+| Low | 19 |
+| Warnings | 22 |
 | Not verified | 13 |
 
 ## Category status
 
 | Category | Status | Fails | Warnings | Not verified |
 |---|---|---|---|---|
-| AI Search | WARNING | 0 | 10 | 1 |
+| AI Search | WARNING | 0 | 4 | 1 |
 | Accessibility | PASS | 0 | 0 | 2 |
 | Code Quality | PASS | 0 | 0 | 0 |
-| Content | WARNING | 0 | 2 | 0 |
+| Content | PASS | 0 | 0 | 0 |
 | Conversion | PASS | 0 | 0 | 1 |
 | Forms | WARNING | 0 | 3 | 1 |
 | Images | WARNING | 0 | 13 | 0 |
@@ -40,13 +40,11 @@
 | Sitemap | PASS | 0 | 0 | 1 |
 | Technical SEO | WARNING | 0 | 2 | 0 |
 
-## Warnings — below standard (30)
+## Warnings — below standard (22)
 
 - **Forms** · `form.js-only-submit` `medium` — contact.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
 - **Forms** · `form.js-only-submit` `medium` — index.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
 - **Forms** · `form.no-required` `medium` — index.html: no field marked required — empty submissions will pass client-side
-- **Content** · `content.similar` `medium` — /removals-bexley and /removals-dartford are 81% similar — differentiate the copy
-- **Content** · `content.similar` `medium` — /removals-croydon and /removals-maidstone are 81% similar — differentiate the copy
 - **Technical SEO** · `seo.og-missing` `low` — 404.html: missing og:title
 - **Technical SEO** · `seo.twitter-card` `low` — 404.html: no twitter:card
 - **Images** · `img.no-lazy` `low` — gallery.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
@@ -64,12 +62,6 @@
 - **Images** · `img.unreferenced` `low` — 9 image file(s) totalling 1111KB are not referenced by any page
 - **AI Search** · `ai.no-question-headings` `low` — contact.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — gallery.html: no question-form headings — answer engines extract answers from question/answer structure
-- **AI Search** · `ai.no-question-headings` `low` — removals-bexley.html: no question-form headings — answer engines extract answers from question/answer structure
-- **AI Search** · `ai.no-question-headings` `low` — removals-bromley.html: no question-form headings — answer engines extract answers from question/answer structure
-- **AI Search** · `ai.no-question-headings` `low` — removals-croydon.html: no question-form headings — answer engines extract answers from question/answer structure
-- **AI Search** · `ai.no-question-headings` `low` — removals-dartford.html: no question-form headings — answer engines extract answers from question/answer structure
-- **AI Search** · `ai.no-question-headings` `low` — removals-maidstone.html: no question-form headings — answer engines extract answers from question/answer structure
-- **AI Search** · `ai.no-question-headings` `low` — removals-sevenoaks.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — terms.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-authorship` `low` — No authorship signal anywhere on the site — weakens E-E-A-T for content pages
 
