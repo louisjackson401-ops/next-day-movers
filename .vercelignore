@@ -1,0 +1,8 @@
+# Internal dev/ops files — kept in git, but NOT deployed/served publicly on the live domain.
+CLAUDE.md
+README.md
+LAUNCH_CHECKLIST.md
+CREATIVE-HUB-SOP/
+.claude/
+.creative-hub/
+qa
