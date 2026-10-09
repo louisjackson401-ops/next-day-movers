@@ -2,9 +2,9 @@
 
 **Project:** Next Day Movers  
 **Repository:** `/Users/louisjackson/Next Day Movers web`  
-**Commit:** `49f5748`  
-**Run:** 2026-10-09 18:49 UTC  
-**Engine:** creative-hub-qa 1.0.0 — 99 checks across 16 page(s)
+**Commit:** `7faa8be`  
+**Run:** 2026-10-09 19:00 UTC  
+**Engine:** creative-hub-qa 1.0.0 — 98 checks across 16 page(s)
 
 ---
 
@@ -16,15 +16,15 @@
 | Critical | 0 |
 | High | 0 |
 | Medium | 9 |
-| Low | 50 |
-| Warnings | 59 |
+| Low | 49 |
+| Warnings | 58 |
 | Not verified | 13 |
 
 ## Category status
 
 | Category | Status | Fails | Warnings | Not verified |
 |---|---|---|---|---|
-| AI Search | WARNING | 0 | 12 | 1 |
+| AI Search | WARNING | 0 | 11 | 1 |
 | Accessibility | PASS | 0 | 0 | 2 |
 | Code Quality | PASS | 0 | 0 | 0 |
 | Content | WARNING | 0 | 2 | 0 |
@@ -40,7 +40,7 @@
 | Sitemap | PASS | 0 | 0 | 1 |
 | Technical SEO | WARNING | 0 | 9 | 0 |
 
-## Warnings — below standard (59)
+## Warnings — below standard (58)
 
 - **Schema** · `schema.no-organization` `medium` — No Organization or LocalBusiness node found anywhere on the site
 - **Forms** · `form.js-only-submit` `medium` — contact.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
@@ -86,12 +86,11 @@
 - **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/img_6059.webp"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/img_0379.webp"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
-- **Images** · `img.unreferenced` `low` — 2 image file(s) totalling 75KB are not referenced by any page
+- **Images** · `img.unreferenced` `low` — 6 image file(s) totalling 852KB are not referenced by any page
 - **Forms** · `form.email-type` `low` — contact.html: email field is type="text" — use type="email"
 - **Forms** · `form.tel-type` `low` — contact.html: phone field is type="text" — use type="tel" for the mobile keypad
 - **AI Search** · `ai.no-question-headings` `low` — contact.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — gallery.html: no question-form headings — answer engines extract answers from question/answer structure
-- **AI Search** · `ai.no-question-headings` `low` — get-a-quote.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — quote.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — removals-bexley.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — removals-bromley.html: no question-form headings — answer engines extract answers from question/answer structure
@@ -144,10 +143,10 @@ _Each of these was actually inspected or measured in this run._
 - **Code Quality** · `html.structure` — 16 page(s) parsed: doctype, lang, ids, headings and landmarks all clean
 - **Technical SEO** · `seo.title-unique-count` — 15 indexable page(s) carry a <title>
 - **Schema** · `schema.parsed` — 247 JSON-LD node(s) parsed successfully across 16 page(s)
-- **Links** · `links.internal-resolved` — 538 internal link(s) resolved across 16 page(s)
+- **Links** · `links.internal-resolved` — 539 internal link(s) resolved across 16 page(s)
 - **Images** · `img.inspected` — 95 image reference(s) resolved to real files and measured
 - **Accessibility** · `a11y.static-checks` — Static accessibility checks run across 16 page(s): control labels, accessible names, focus order, zoom, motion
-- **Security** · `sec.secret-scan` — 26 text file(s) scanned against 11 credential patterns
+- **Security** · `sec.secret-scan` — 29 text file(s) scanned against 11 credential patterns
 - **Security** · `sec.header` — vercel.json sets strict-transport-security
 - **Security** · `sec.header` — vercel.json sets x-content-type-options
 - **Security** · `sec.header` — vercel.json sets content-security-policy
@@ -162,8 +161,8 @@ _Each of these was actually inspected or measured in this run._
 - **Privacy** · `privacy.policy-page` — Terms page present at /terms
 - **Forms** · `form.inspected` — 3 form(s) inspected for method, handler, spam protection, privacy notice and validation
 - **Conversion** · `cro.static-checks` — Conversion path checked on 16 page(s): phone reachability, CTA presence and position, value proposition, trust signals
-- **Performance** · `perf.css-weight` — Total CSS 26KB (budget 120KB)
-- **Performance** · `perf.js-weight` — Total JS 59KB (budget 180KB)
+- **Performance** · `perf.css-weight` — Total CSS 29KB (budget 120KB)
+- **Performance** · `perf.js-weight` — Total JS 67KB (budget 180KB)
 - **Performance** · `perf.asset-caching` — vercel.json sets immutable long-lived caching for static assets
 - **Content** · `content.claims-confirmed` — 7 factual claim(s) present; claimsVerifiedByClient is true, so the client has signed these off: insurance/accreditation claim: "Fully insured"; rating claim: "Rated 5.0"; free-offer claim: "free quote"; price claim: "£1"; price claim: "£380"; price claim: "£300,"; …
 - **AI Search** · `ai.structure-checked` — Answer-engine readiness checked on 15 indexable page(s): question headings, semantic landmarks, schema-backed entities

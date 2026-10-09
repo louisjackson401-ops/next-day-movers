@@ -1,0 +1,33 @@
+/* Next Day Movers — before/after comparison slider (reusable; loads after site.css) */
+.ba-wrap{max-width:720px;margin:0 auto}
+.ba-head{text-align:center;margin-bottom:22px}
+.ba-figbox{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#0f0f10}
+.ba-fig{position:relative;width:100%;aspect-ratio:1000/1333;max-height:66vh;margin:0;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ba-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none;-webkit-user-drag:none}
+.ba-after{position:absolute;inset:0;clip-path:inset(0 0 0 50%)}
+.ba-tag{position:absolute;top:12px;z-index:3;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px;background:rgba(0,0,0,.6);color:#fff;backdrop-filter:blur(2px)}
+.ba-tag.before{left:12px}.ba-tag.after{right:12px;background:rgba(var(--gold-rgb),.92);color:#161616}
+.ba-divider{position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:var(--gold);z-index:4;pointer-events:none}
+.ba-handle{position:absolute;top:50%;left:50%;z-index:5;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:var(--gold);color:#161616;border:3px solid #fff;box-shadow:0 2px 12px rgba(0,0,0,.45);cursor:ew-resize;display:flex;align-items:center;justify-content:center;touch-action:none}
+.ba-handle:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.ba-handle svg{width:22px;height:22px;pointer-events:none}
+.ba-cap{text-align:center;font-size:13.5px;color:var(--muted);margin:14px 0 0;min-height:1.2em}
+.ba-cap strong{color:var(--text)}
+.ba-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
+.ba-arrow{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:var(--panel);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ba-arrow:hover{border-color:var(--gold)}
+.ba-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.ba-arrow[disabled]{opacity:.35;cursor:default}
+.ba-dots{display:flex;gap:8px}
+.ba-dot{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.25);cursor:pointer;padding:0}
+.ba-dot.on{background:var(--gold);width:22px;border-radius:5px}
+.ba-dot:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.ba-cta{text-align:center;margin-top:26px}
+.ba-cta h3{font-family:Sora,sans-serif;font-size:clamp(20px,3vw,26px);margin:0 0 8px}
+.ba-cta p{color:var(--muted);max-width:46ch;margin:0 auto 16px;font-size:14.5px;line-height:1.5}
+.ba-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--dim);font-size:13px;background:#141416}
+.ba-figbox.failed .ba-fallback{display:flex}.ba-figbox.failed .ba-fig{visibility:hidden}
+/* entrance */
+.ba-reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.ba-reveal.ba-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.ba-reveal{opacity:1;transform:none;transition:none}.ba-divider,.ba-handle,.ba-after{transition:none!important}}

@@ -319,6 +319,7 @@
   }
 
   function startService(svc) { state = { service: svc }; stepIdx = 0; distMiles = null; distKey = null; render(); focusFirst(); }
+  window.NDMStartQuote = startService; // lets the before/after CTA preselect a service in-place
 
   function estimatePanel() {
     var pr = priceRange(state), sc = surcharge(distMiles), out = '';

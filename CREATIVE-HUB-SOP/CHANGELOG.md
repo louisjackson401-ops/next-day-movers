@@ -8,6 +8,33 @@ An accepted failure must record: the finding id, who accepted it, and why.
 
 ---
 
+## 2026-10-09 — Before/after waste-clearance slider (genuine pairs only)
+
+Added a reusable before/after comparison slider (`assets/compare.js` + `assets/compare.css`)
+with its data in `assets/ba-data.js` (edit that file to add pairs). Placed a
+"From cluttered to clear" section on `get-a-quote.html` below the quote app, with a
+waste-clearance CTA that preselects Waste in the quote engine in-place
+(`window.NDMStartQuote`).
+
+- **Only genuine, same-space pairs used.** Reviewed all 118 source photos via contact
+  sheets; found two real, well-aligned before/after pairs and verified them full-size:
+  (1) garage full of timber → same garage cleared (IMG_0417 → IMG_0421);
+  (2) side-return piled with waste → same alley cleared (IMG_3667 → IMG_3670).
+  Processed to matched 1000-wide webp (171–225 KB, under budget).
+  **Did NOT fabricate** the other brief categories (house/furniture/domestic); rejected
+  IMG_5589/5590 as a pair because they are different rooms.
+- Native slider: pointer drag + keyboard (arrows/Home/End, role=slider) + gallery
+  prev/next/dots (nav separate from the drag handle, no conflict), image-fail fallback,
+  reduced-motion + IntersectionObserver entrance, lazy below-fold.
+- Fixed a CSP critical caught by chqa: moved slide data out of an inline
+  `<script type="application/json">` into external `ba-data.js` (no inline scripts).
+- **Tested (browser):** renders from external data, keyboard + gallery nav + CTA
+  preselect all work, no console errors, on-brand. `chqa audit`: **APPROVED FOR PRODUCTION**.
+- NEEDS CLIENT: more genuine matched before/after pairs (house clearance, furniture,
+  domestic) to expand the gallery — none fabricated.
+
+---
+
 ## 2026-10-09 — Claims confirmed by client; QA gate opened
 
 Client (Louis Jackson, owner) confirmed in writing, in session, that every
