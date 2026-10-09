@@ -2,8 +2,8 @@
 
 **Project:** Next Day Movers  
 **Repository:** `/Users/louisjackson/Next Day Movers web`  
-**Commit:** `ed3182f`  
-**Run:** 2026-10-09 19:35 UTC  
+**Commit:** `715a6eb`  
+**Run:** 2026-10-09 19:43 UTC  
 **Engine:** creative-hub-qa 1.0.0 — 62 checks across 15 page(s)
 
 ---
@@ -126,7 +126,7 @@ _Each of these was actually inspected or measured in this run._
 - **Forms** · `form.inspected` — 2 form(s) inspected for method, handler, spam protection, privacy notice and validation
 - **Conversion** · `cro.static-checks` — Conversion path checked on 15 page(s): phone reachability, CTA presence and position, value proposition, trust signals
 - **Performance** · `perf.css-weight` — Total CSS 29KB (budget 120KB)
-- **Performance** · `perf.js-weight` — Total JS 67KB (budget 180KB)
+- **Performance** · `perf.js-weight` — Total JS 68KB (budget 180KB)
 - **Performance** · `perf.asset-caching` — vercel.json sets immutable long-lived caching for static assets
 - **Content** · `content.claims-confirmed` — 7 factual claim(s) present; claimsVerifiedByClient is true, so the client has signed these off: insurance/accreditation claim: "Fully insured"; rating claim: "Rated 5.0"; free-offer claim: "free quote"; price claim: "£1"; price claim: "£380"; price claim: "£300,"; …
 - **AI Search** · `ai.structure-checked` — Answer-engine readiness checked on 14 indexable page(s): question headings, semantic landmarks, schema-backed entities

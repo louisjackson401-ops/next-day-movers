@@ -318,7 +318,7 @@
     });
   }
 
-  function startService(svc) { state = { service: svc }; stepIdx = 0; distMiles = null; distKey = null; render(); focusFirst(); }
+  function startService(svc) { state = { service: svc }; stepIdx = 0; distMiles = null; distKey = null; if (window.NDMtrack) window.NDMtrack('quote_start', { service: svc }); render(); focusFirst(); }
   window.NDMStartQuote = startService; // lets the before/after CTA preselect a service in-place
 
   function estimatePanel() {
@@ -510,6 +510,7 @@
   function hidden(n, v) { var i = document.createElement('input'); i.type = 'hidden'; i.name = n; i.value = v == null ? '' : v; return i; }
 
   function showThanks() {
+    if (window.NDMtrack) window.NDMtrack('quote_submit', { service: state.service || '' });
     root.innerHTML = '';
     root.appendChild(el('<div class="q-done"><div class="q-done-ic">✓</div>' +
       '<h2>Thanks! Your quote request has been received.</h2>' +

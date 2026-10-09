@@ -24,8 +24,9 @@
       .catch(function () { return false; });
   }
 
-  /* ---- Google Ads tag + Consent Mode v2 ---- */
+  /* ---- Google Ads + GA4 tag + Consent Mode v2 ---- */
   var GADS_ID = 'AW-18354289784';
+  var GA4_ID = 'G-CL7VCY5L6G';
   var GADS_CONV_LABEL = 'G5IOCPWmm9gcEPj4gLBE'; // "Submit lead form" conversion (quote form)
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -40,6 +41,7 @@
     });
     gtag('js', new Date());
     gtag('config', GADS_ID);
+    gtag('config', GA4_ID);
     if (granted) gtag('consent', 'update', {
       ad_storage: 'granted', ad_user_data: 'granted',
       ad_personalization: 'granted', analytics_storage: 'granted'
@@ -52,6 +54,17 @@
   function fireQuoteConversion() {
     if (!GADS_CONV_LABEL) return;
     gtag('event', 'conversion', { send_to: GADS_ID + '/' + GADS_CONV_LABEL, value: 1.0, currency: 'GBP' });
+  }
+  // GA4 event helper (consent-gated by gtag) + global so quote.js can report funnel steps
+  window.NDMtrack = function (name, params) { try { gtag('event', name, params || {}); } catch (e) {} };
+  function initTracking() {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (href.indexOf('tel:') === 0) window.NDMtrack('click_to_call', { phone: href.replace('tel:', '') });
+      else if (href.indexOf('wa.me') > -1 || href.indexOf('whatsapp') > -1) window.NDMtrack('whatsapp_click');
+      else if (href.indexOf('mailto:') === 0) window.NDMtrack('email_click');
+    }, true);
   }
 
   /* ---- Cookie consent banner (drives Consent Mode) ---- */
@@ -412,7 +425,7 @@
   }
 
   function init() {
-    initNav(); initReveal(); initCounter(); initQuote(); initReviews(); initFaq(); initLightbox(); initContact(); initWhatsApp(); initConsent();
+    initNav(); initReveal(); initCounter(); initQuote(); initReviews(); initFaq(); initLightbox(); initContact(); initWhatsApp(); initConsent(); initTracking();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
