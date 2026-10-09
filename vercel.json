@@ -8,7 +8,9 @@
       "has": [{ "type": "host", "value": "www.nextdaymovers.co.uk" }],
       "destination": "https://nextdaymovers.co.uk/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/quote", "destination": "/get-a-quote", "permanent": true },
+    { "source": "/quote.html", "destination": "/get-a-quote", "permanent": true }
   ],
   "headers": [
     {

@@ -3,3 +3,6 @@
 assets/photos/manifest.txt
 node_modules/
 *.log
+
+# Creative Hub QA state
+.creative-hub/

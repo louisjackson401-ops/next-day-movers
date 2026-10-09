@@ -1,0 +1,94 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" gate --quiet --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "timeout": 60,
+            "statusMessage": "Creative Hub QA gate"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(git push*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(vercel*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(npx vercel*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(netlify deploy*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(npx netlify deploy*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(firebase deploy*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(wrangler deploy*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(wrangler publish*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(npx gh-pages*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          },
+          {
+            "type": "command",
+            "command": "\"/Users/louisjackson/creative-hub-qa/bin/chqa\" deploy-guard --repo \"${CLAUDE_PROJECT_DIR:-$PWD}\"",
+            "if": "Bash(surge*)",
+            "timeout": 60,
+            "statusMessage": "Creative Hub deploy gate"
+          }
+        ]
+      }
+    ]
+  }
+}

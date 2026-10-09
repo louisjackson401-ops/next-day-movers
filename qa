@@ -1,0 +1,2 @@
+#!/bin/sh
+exec "/Users/louisjackson/creative-hub-qa/bin/chqa" audit --repo "$(cd "$(dirname "$0")" && pwd)" "$@"

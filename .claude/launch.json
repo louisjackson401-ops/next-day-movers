@@ -1,0 +1,33 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "crm-portal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/louisjackson/Creatives Hub CRM Onboarding",
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3140"
+      ],
+      "port": 3140
+    },
+    {
+      "name": "aj-construction",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/louisjackson/aj-construction-kent-web",
+        "--",
+        "-p",
+        "3130"
+      ],
+      "port": 3130
+    }
+  ]
+}

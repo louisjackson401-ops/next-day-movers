@@ -5,6 +5,12 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
 
+  /* ---- Spam honeypot: the hidden field is invisible to people, irresistible to bots ---- */
+  function isBot(id) {
+    var h = document.getElementById(id);
+    return !!(h && h.value);
+  }
+
   /* ---- Lead delivery (emailed via FormSubmit — no backend needed) ---- */
   var LEAD_ENDPOINT = 'https://formsubmit.co/ajax/nextdaymoversuk@gmail.com';
   function postLead(data) {
@@ -216,6 +222,7 @@
     g('quoteBtn').addEventListener('click', function () {
       var btn = g('quoteBtn');
       if (btn.dataset.sending === '1' || btn.dataset.submitted === '1') return;
+      if (isBot('qHoney')) return;
       var th = g('quoteThanks');
       function qerr(msg, el) { if (th) { th.style.color = '#FB8A3C'; th.textContent = msg; th.style.display = 'block'; } if (el) el.focus(); }
       if (checkCoverage()) { g('qFrom').focus(); return; }   // out of area → don't send a dead lead
@@ -358,6 +365,7 @@
     var g = function (id) { return $('#' + id); };
     btn.addEventListener('click', function () {
       if (btn.dataset.sending === '1') return;
+      if (isBot('cHoney')) return;
       var name = g('cName').value.trim(), phone = g('cPhone').value.trim(), email = g('cEmail').value.trim();
       var th = g('cThanks');
       function cerr(msg, el) { if (th) { th.style.color = '#FB8A3C'; th.textContent = msg; th.style.display = 'block'; } if (el) el.focus(); }

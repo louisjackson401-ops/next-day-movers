@@ -8,6 +8,36 @@ An accepted failure must record: the finding id, who accepted it, and why.
 
 ---
 
+## 2026-10-09 — SEO/AEO quick-wins batch (from the growth audit)
+
+Implemented the safe, high-value items from GROWTH-AUDIT.md (§K first-10):
+- **Consolidated the quote journey:** deleted legacy `quote.html`; added 301
+  redirects `/quote` + `/quote.html` → `/get-a-quote` in `vercel.json`; removed
+  `/quote` from `sitemap.xml`; repointed every nav/footer/mobilebar/CTA link
+  site-wide from `/quote` → `/get-a-quote` and relabelled nav "Instant Quote" →
+  "Get a Quote". One clean conversion path.
+- **SERP CTR:** trimmed over-length `<title>`/`<meta description>` on home,
+  services, get-a-quote and contact so they stop truncating.
+- **Schema:** added an explicit `Organization` JSON-LD (with `sameAs` → Google
+  profile + Instagram) on the homepage — clears the no-Organization warning and
+  strengthens the entity for knowledge-graph / AI search. (Schema category now PASS.)
+- **AEO crawler access:** `robots.txt` now explicitly welcomes AI/answer-engine
+  crawlers (OAI-SearchBot, GPTBot, ChatGPT-User, PerplexityBot, Google-Extended,
+  Bingbot, Applebot) alongside the existing open policy.
+- **Perf:** lazy-loaded genuinely below-fold content images (hero stays eager with
+  fetchpriority; reverted an over-eager pass that had lazied footer logos / a
+  near-fold image — caught by the gate's LCP-lazy check).
+- **Forms:** contact form now uses `type="email"`/`type="tel"` + a required field
+  + autocomplete.
+
+Not changed (deferred to roadmap): GA4 install (needs Measurement ID), location-page
+differentiation, new town pages, cornerstone guides, IndexNow/Bing verification,
+citations — all off-site or content work in GROWTH-AUDIT.md §J.
+
+`chqa audit`: **APPROVED FOR PRODUCTION** (0 failures).
+
+---
+
 ## 2026-10-09 — Before/after waste-clearance slider (genuine pairs only)
 
 Added a reusable before/after comparison slider (`assets/compare.js` + `assets/compare.css`)

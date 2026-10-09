@@ -2,9 +2,9 @@
 
 **Project:** Next Day Movers  
 **Repository:** `/Users/louisjackson/Next Day Movers web`  
-**Commit:** `c75e1c3`  
-**Run:** 2026-10-09 19:12 UTC  
-**Engine:** creative-hub-qa 1.0.0 — 98 checks across 16 page(s)
+**Commit:** `69ed00e`  
+**Run:** 2026-10-09 19:27 UTC  
+**Engine:** creative-hub-qa 1.0.0 — 70 checks across 15 page(s)
 
 ---
 
@@ -15,64 +15,44 @@
 | Failures | 0 |
 | Critical | 0 |
 | High | 0 |
-| Medium | 9 |
-| Low | 49 |
-| Warnings | 58 |
+| Medium | 5 |
+| Low | 25 |
+| Warnings | 30 |
 | Not verified | 13 |
 
 ## Category status
 
 | Category | Status | Fails | Warnings | Not verified |
 |---|---|---|---|---|
-| AI Search | WARNING | 0 | 11 | 1 |
+| AI Search | WARNING | 0 | 10 | 1 |
 | Accessibility | PASS | 0 | 0 | 2 |
 | Code Quality | PASS | 0 | 0 | 0 |
 | Content | WARNING | 0 | 2 | 0 |
 | Conversion | PASS | 0 | 0 | 1 |
-| Forms | WARNING | 0 | 8 | 1 |
-| Images | WARNING | 0 | 27 | 0 |
+| Forms | WARNING | 0 | 3 | 1 |
+| Images | WARNING | 0 | 13 | 0 |
 | Links | PASS | 0 | 0 | 1 |
 | Performance | PASS | 0 | 0 | 2 |
 | Privacy | PASS | 0 | 0 | 1 |
 | Robots | PASS | 0 | 0 | 0 |
-| Schema | WARNING | 0 | 1 | 1 |
+| Schema | PASS | 0 | 0 | 1 |
 | Security | PASS | 0 | 0 | 2 |
 | Sitemap | PASS | 0 | 0 | 1 |
-| Technical SEO | WARNING | 0 | 9 | 0 |
+| Technical SEO | WARNING | 0 | 2 | 0 |
 
-## Warnings — below standard (58)
+## Warnings — below standard (30)
 
-- **Schema** · `schema.no-organization` `medium` — No Organization or LocalBusiness node found anywhere on the site
 - **Forms** · `form.js-only-submit` `medium` — contact.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
-- **Forms** · `form.no-required` `medium` — contact.html: no field marked required — empty submissions will pass client-side
 - **Forms** · `form.js-only-submit` `medium` — index.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
 - **Forms** · `form.no-required` `medium` — index.html: no field marked required — empty submissions will pass client-side
-- **Forms** · `form.js-only-submit` `medium` — quote.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
-- **Forms** · `form.no-required` `medium` — quote.html: no field marked required — empty submissions will pass client-side
 - **Content** · `content.similar` `medium` — /removals-bexley and /removals-dartford are 81% similar — differentiate the copy
 - **Content** · `content.similar` `medium` — /removals-croydon and /removals-maidstone are 81% similar — differentiate the copy
 - **Technical SEO** · `seo.og-missing` `low` — 404.html: missing og:title
 - **Technical SEO** · `seo.twitter-card` `low` — 404.html: no twitter:card
-- **Technical SEO** · `seo.desc-long` `low` — contact.html: description 182 chars, will truncate
-- **Technical SEO** · `seo.title-long` `low` — get-a-quote.html: title 70 chars, will truncate in SERPs — "Get a Quote — House, Office, Single Item &amp; Waste | Next Day Movers"
-- **Technical SEO** · `seo.desc-long` `low` — get-a-quote.html: description 175 chars, will truncate
-- **Technical SEO** · `seo.title-long` `low` — index.html: title 71 chars, will truncate in SERPs — "Next Day Movers — Fully insured house removals across London &amp; Kent"
-- **Technical SEO** · `seo.desc-long` `low` — index.html: description 194 chars, will truncate
-- **Technical SEO** · `seo.title-long` `low` — services.html: title 73 chars, will truncate in SERPs — "Services — Removals, office moves &amp; waste clearance | Next Day Movers"
-- **Technical SEO** · `seo.desc-long` `low` — services.html: description 175 chars, will truncate
 - **Images** · `img.no-lazy` `low` — gallery.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
 - **Images** · `img.alt-empty` `low` — index.html: <img src="assets/photos/img_6841.webp"> has empty alt — correct only if purely decorative
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/0a3b1b58-aa54-4844-8589-7d3b17e671f0.webp"> has no loading="lazy"
 - **Images** · `img.alt-empty` `low` — index.html: <img src="assets/logo.svg"> has empty alt — correct only if purely decorative
 - **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/img_3935_2.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/img_3943.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/7d58d0a1-3349-4f55-8c51-477e66318f38.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/img_0246.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/img_3941.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/img_0238.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/img_6059.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/photos/img_0337.webp"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — index.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — removals-bexley.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — removals-bromley.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
@@ -80,18 +60,10 @@
 - **Images** · `img.no-lazy` `low` — removals-dartford.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — removals-maidstone.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — removals-sevenoaks.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/3af0f409-b2aa-4e0b-ad77-0d4f444ad9d0.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/e3e02972-acc1-449c-b66d-84de5d9d3520.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/img_3941.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/img_6059.webp"> has no loading="lazy"
-- **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/img_0379.webp"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
-- **Images** · `img.unreferenced` `low` — 8 image file(s) totalling 1041KB are not referenced by any page
-- **Forms** · `form.email-type` `low` — contact.html: email field is type="text" — use type="email"
-- **Forms** · `form.tel-type` `low` — contact.html: phone field is type="text" — use type="tel" for the mobile keypad
+- **Images** · `img.unreferenced` `low` — 9 image file(s) totalling 1111KB are not referenced by any page
 - **AI Search** · `ai.no-question-headings` `low` — contact.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — gallery.html: no question-form headings — answer engines extract answers from question/answer structure
-- **AI Search** · `ai.no-question-headings` `low` — quote.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — removals-bexley.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — removals-bromley.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — removals-croydon.html: no question-form headings — answer engines extract answers from question/answer structure
@@ -107,7 +79,7 @@ _These were not checked. They are not passes. Each one names what access would s
 
 - **Schema** · `schema.google-validation` — JSON-LD syntax was validated locally; Google eligibility for rich results was not
   - _Requires:_ Run the URL through the Google Rich Results Test on the live domain
-- **Links** · `links.external-http` — 42 external link(s) to 4 distinct URL(s) were found but not requested over the network
+- **Links** · `links.external-http` — 39 external link(s) to 4 distinct URL(s) were found but not requested over the network
   - _Requires:_ Re-run with --network to check external links return 2xx
 - **Accessibility** · `a11y.contrast` — Colour contrast ratios were not computed — they depend on rendered CSS cascade
   - _Requires:_ Run axe DevTools or Lighthouse accessibility audit against the rendered page
@@ -140,13 +112,13 @@ _These were not checked. They are not passes. Each one names what access would s
 
 _Each of these was actually inspected or measured in this run._
 
-- **Code Quality** · `html.structure` — 16 page(s) parsed: doctype, lang, ids, headings and landmarks all clean
-- **Technical SEO** · `seo.title-unique-count` — 15 indexable page(s) carry a <title>
-- **Schema** · `schema.parsed` — 247 JSON-LD node(s) parsed successfully across 16 page(s)
-- **Links** · `links.internal-resolved` — 539 internal link(s) resolved across 16 page(s)
-- **Images** · `img.inspected` — 95 image reference(s) resolved to real files and measured
-- **Accessibility** · `a11y.static-checks` — Static accessibility checks run across 16 page(s): control labels, accessible names, focus order, zoom, motion
-- **Security** · `sec.secret-scan` — 29 text file(s) scanned against 11 credential patterns
+- **Code Quality** · `html.structure` — 15 page(s) parsed: doctype, lang, ids, headings and landmarks all clean
+- **Technical SEO** · `seo.title-unique-count` — 14 indexable page(s) carry a <title>
+- **Schema** · `schema.parsed` — 245 JSON-LD node(s) parsed successfully across 15 page(s)
+- **Links** · `links.internal-resolved` — 512 internal link(s) resolved across 15 page(s)
+- **Images** · `img.inspected` — 93 image reference(s) resolved to real files and measured
+- **Accessibility** · `a11y.static-checks` — Static accessibility checks run across 15 page(s): control labels, accessible names, focus order, zoom, motion
+- **Security** · `sec.secret-scan` — 28 text file(s) scanned against 11 credential patterns
 - **Security** · `sec.header` — vercel.json sets strict-transport-security
 - **Security** · `sec.header` — vercel.json sets x-content-type-options
 - **Security** · `sec.header` — vercel.json sets content-security-policy
@@ -155,17 +127,17 @@ _Each of these was actually inspected or measured in this run._
 - **Security** · `sec.header` — vercel.json sets permissions-policy
 - **Robots** · `robots.sitemap-declared` — robots.txt declares https://nextdaymovers.co.uk/sitemap.xml
 - **Robots** · `robots.crawlable` — robots.txt permits crawling of the site
-- **Sitemap** · `sitemap.matches-site` — sitemap.xml lists exactly the 15 indexable page(s) in the build
+- **Sitemap** · `sitemap.matches-site` — sitemap.xml lists exactly the 14 indexable page(s) in the build
 - **Privacy** · `privacy.policy-page` — Privacy Policy page present at /privacy
 - **Privacy** · `privacy.policy-page` — Cookie Policy page present at /cookies
 - **Privacy** · `privacy.policy-page` — Terms page present at /terms
-- **Forms** · `form.inspected` — 3 form(s) inspected for method, handler, spam protection, privacy notice and validation
-- **Conversion** · `cro.static-checks` — Conversion path checked on 16 page(s): phone reachability, CTA presence and position, value proposition, trust signals
+- **Forms** · `form.inspected` — 2 form(s) inspected for method, handler, spam protection, privacy notice and validation
+- **Conversion** · `cro.static-checks` — Conversion path checked on 15 page(s): phone reachability, CTA presence and position, value proposition, trust signals
 - **Performance** · `perf.css-weight` — Total CSS 29KB (budget 120KB)
 - **Performance** · `perf.js-weight` — Total JS 67KB (budget 180KB)
 - **Performance** · `perf.asset-caching` — vercel.json sets immutable long-lived caching for static assets
 - **Content** · `content.claims-confirmed` — 7 factual claim(s) present; claimsVerifiedByClient is true, so the client has signed these off: insurance/accreditation claim: "Fully insured"; rating claim: "Rated 5.0"; free-offer claim: "free quote"; price claim: "£1"; price claim: "£380"; price claim: "£300,"; …
-- **AI Search** · `ai.structure-checked` — Answer-engine readiness checked on 15 indexable page(s): question headings, semantic landmarks, schema-backed entities
+- **AI Search** · `ai.structure-checked` — Answer-engine readiness checked on 14 indexable page(s): question headings, semantic landmarks, schema-backed entities
 
 ---
 
