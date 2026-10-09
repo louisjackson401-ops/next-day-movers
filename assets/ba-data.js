@@ -21,5 +21,15 @@ window.NDM_BA = [
     beforeAlt: 'Side return of a house piled with bagged rubbish and waste before clearance',
     afterAlt: 'The same side return cleared back to clean paving by Next Day Movers',
     caption: 'A blocked side return cleared back to clean paving.'
+  },
+  {
+    id: 'forecourt-furniture',
+    title: 'Furniture & bulky-item clearance',
+    category: 'Furniture removal',
+    before: 'assets/photos/ba-forecourt-before.webp',
+    after: 'assets/photos/ba-forecourt-after.webp',
+    beforeAlt: 'A forecourt piled with old mattresses, drawers, chairs and a table before clearance',
+    afterAlt: 'The same forecourt cleared of all furniture by Next Day Movers',
+    caption: 'Old mattresses, drawers and furniture removed from a front forecourt.'
   }
 ];

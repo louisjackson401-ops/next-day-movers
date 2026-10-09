@@ -2,8 +2,8 @@
 
 **Project:** Next Day Movers  
 **Repository:** `/Users/louisjackson/Next Day Movers web`  
-**Commit:** `7faa8be`  
-**Run:** 2026-10-09 19:00 UTC  
+**Commit:** `c75e1c3`  
+**Run:** 2026-10-09 19:12 UTC  
 **Engine:** creative-hub-qa 1.0.0 — 98 checks across 16 page(s)
 
 ---
@@ -86,7 +86,7 @@
 - **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/img_6059.webp"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/photos/img_0379.webp"> has no loading="lazy"
 - **Images** · `img.no-lazy` `low` — services.html: below-fold <img src="assets/logo.svg"> has no loading="lazy"
-- **Images** · `img.unreferenced` `low` — 6 image file(s) totalling 852KB are not referenced by any page
+- **Images** · `img.unreferenced` `low` — 8 image file(s) totalling 1041KB are not referenced by any page
 - **Forms** · `form.email-type` `low` — contact.html: email field is type="text" — use type="email"
 - **Forms** · `form.tel-type` `low` — contact.html: phone field is type="text" — use type="tel" for the mobile keypad
 - **AI Search** · `ai.no-question-headings` `low` — contact.html: no question-form headings — answer engines extract answers from question/answer structure

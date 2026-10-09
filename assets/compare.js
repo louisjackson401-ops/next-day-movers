@@ -58,7 +58,8 @@
     var loaded = 0, failed = false;
     function done() { loaded++; }
     function fail() { failed = true; figbox.classList.add('failed'); fallback.textContent = s.title + ' — image unavailable'; }
-    beforeImg.onload = done; afterImg.onload = done;
+    beforeImg.onload = function () { done(); if (beforeImg.naturalWidth && beforeImg.naturalHeight) fig.style.aspectRatio = beforeImg.naturalWidth + ' / ' + beforeImg.naturalHeight; };
+    afterImg.onload = done;
     beforeImg.onerror = fail; afterImg.onerror = fail;
     beforeImg.alt = s.beforeAlt || (s.title + ' before clearance');
     afterImg.alt = s.afterAlt || (s.title + ' after clearance');
