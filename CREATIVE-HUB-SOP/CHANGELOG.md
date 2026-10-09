@@ -158,3 +158,21 @@ question-form H3 headings ("What are parking and access like…", "Which areas�
   testimonials or figures (CLAUDE.md-compliant; not town-swap).
 
 chqa: Content PASS, Schema PASS, GATE APPROVED FOR PRODUCTION.
+
+---
+
+## 2026-10-09 — 4 new location pages + South-East hub + GA4
+
+- New location pages with genuine, non-template local content (postcodes, property
+  mix, access/parking, neighbours, question-form headings): /removals-beckenham,
+  /removals-orpington, /removals-chislehurst, /removals-sidcup. Generated from the
+  Bexley template for boilerplate fidelity, then every town-specific block replaced
+  (0 "Bexley" residue; verified in-browser).
+- New **/removals-south-east** hub: links all 10 location pages (SE London + Kent),
+  the internal-linking spine. Footer "Areas" column expanded site-wide to link all
+  areas + the hub.
+- sitemap.xml: +5 URLs (now 19). chqa: 20 pages, **APPROVED FOR PRODUCTION**.
+- GA4 (G-CL7VCY5L6G) installed earlier this day; these pages inherit it.
+
+Next (needs client): GBP optimisation + reviews, Bing Webmaster, citations,
+waste-carrier licence, cornerstone guides. Still no fabricated local claims.

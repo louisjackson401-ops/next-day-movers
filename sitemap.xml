@@ -39,4 +39,34 @@
   <url><loc>https://nextdaymovers.co.uk/privacy</loc><lastmod>2026-07-18</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://nextdaymovers.co.uk/terms</loc><lastmod>2026-07-18</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://nextdaymovers.co.uk/cookies</loc><lastmod>2026-07-18</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url>
+    <loc>https://nextdaymovers.co.uk/removals-south-east</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextdaymovers.co.uk/removals-beckenham</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextdaymovers.co.uk/removals-orpington</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextdaymovers.co.uk/removals-chislehurst</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextdaymovers.co.uk/removals-sidcup</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
