@@ -8,6 +8,24 @@ An accepted failure must record: the finding id, who accepted it, and why.
 
 ---
 
+## 2026-10-09 — Claims confirmed by client; QA gate opened
+
+Client (Louis Jackson, owner) confirmed in writing, in session, that every
+factual claim on the site is accurate and may be published:
+- Fully insured (goods-in-transit & public liability).
+- Google rating 5.0, review count 14.
+- Guide prices: man & van from £120; 1-bed from £300; 2-bed £500–750;
+  3-bed £750–1,200; 4+ £1,200–2,000; waste from £120; +£1/mile after 20 miles;
+  home-page "from £380" example.
+- Free, no-obligation quotes.
+
+Set `claimsVerifiedByClient: true`. This clears the claims-gate critical and the
+15 unverified-claim failures (home/location AggregateRating + Offer nodes, insurance,
+rating, price and free-quote copy). No content changed — claims were already true;
+this records the sign-off.
+
+---
+
 ## 2026-10-09 — Instant quote engine: 4 service journeys (build, not yet deployed)
 
 Added a data-driven multi-step quote engine (`assets/quote.js` + `assets/quote.css`)
