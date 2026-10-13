@@ -2,9 +2,9 @@
 
 **Project:** Next Day Movers  
 **Repository:** `/Users/louisjackson/Next Day Movers web`  
-**Commit:** `6ea37ab`  
-**Run:** 2026-10-09 19:48 UTC  
-**Engine:** creative-hub-qa 1.0.0 — 68 checks across 20 page(s)
+**Commit:** `1184fdc`  
+**Run:** 2026-10-13 18:55 UTC  
+**Engine:** creative-hub-qa 1.0.0 — 66 checks across 20 page(s)
 
 ---
 
@@ -15,9 +15,9 @@
 | Failures | 0 |
 | Critical | 0 |
 | High | 0 |
-| Medium | 3 |
+| Medium | 1 |
 | Low | 25 |
-| Warnings | 28 |
+| Warnings | 26 |
 | Not verified | 13 |
 
 ## Category status
@@ -29,7 +29,7 @@
 | Code Quality | PASS | 0 | 0 | 0 |
 | Content | PASS | 0 | 0 | 0 |
 | Conversion | PASS | 0 | 0 | 1 |
-| Forms | WARNING | 0 | 3 | 1 |
+| Forms | WARNING | 0 | 1 | 1 |
 | Images | WARNING | 0 | 17 | 0 |
 | Links | PASS | 0 | 0 | 1 |
 | Performance | PASS | 0 | 0 | 2 |
@@ -40,11 +40,9 @@
 | Sitemap | PASS | 0 | 0 | 1 |
 | Technical SEO | WARNING | 0 | 4 | 0 |
 
-## Warnings — below standard (28)
+## Warnings — below standard (26)
 
 - **Forms** · `form.js-only-submit` `medium` — contact.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
-- **Forms** · `form.js-only-submit` `medium` — index.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
-- **Forms** · `form.no-required` `medium` — index.html: no field marked required — empty submissions will pass client-side
 - **Technical SEO** · `seo.og-missing` `low` — 404.html: missing og:title
 - **Technical SEO** · `seo.twitter-card` `low` — 404.html: no twitter:card
 - **Technical SEO** · `seo.desc-long` `low` — removals-chislehurst.html: description 172 chars, will truncate
@@ -113,7 +111,7 @@ _Each of these was actually inspected or measured in this run._
 - **Code Quality** · `html.structure` — 20 page(s) parsed: doctype, lang, ids, headings and landmarks all clean
 - **Technical SEO** · `seo.title-unique-count` — 19 indexable page(s) carry a <title>
 - **Schema** · `schema.parsed` — 340 JSON-LD node(s) parsed successfully across 20 page(s)
-- **Links** · `links.internal-resolved` — 768 internal link(s) resolved across 20 page(s)
+- **Links** · `links.internal-resolved` — 772 internal link(s) resolved across 20 page(s)
 - **Images** · `img.inspected` — 107 image reference(s) resolved to real files and measured
 - **Accessibility** · `a11y.static-checks` — Static accessibility checks run across 20 page(s): control labels, accessible names, focus order, zoom, motion
 - **Security** · `sec.secret-scan` — 33 text file(s) scanned against 11 credential patterns
@@ -129,12 +127,12 @@ _Each of these was actually inspected or measured in this run._
 - **Privacy** · `privacy.policy-page` — Privacy Policy page present at /privacy
 - **Privacy** · `privacy.policy-page` — Cookie Policy page present at /cookies
 - **Privacy** · `privacy.policy-page` — Terms page present at /terms
-- **Forms** · `form.inspected` — 2 form(s) inspected for method, handler, spam protection, privacy notice and validation
+- **Forms** · `form.inspected` — 1 form(s) inspected for method, handler, spam protection, privacy notice and validation
 - **Conversion** · `cro.static-checks` — Conversion path checked on 20 page(s): phone reachability, CTA presence and position, value proposition, trust signals
-- **Performance** · `perf.css-weight` — Total CSS 29KB (budget 120KB)
+- **Performance** · `perf.css-weight` — Total CSS 30KB (budget 120KB)
 - **Performance** · `perf.js-weight` — Total JS 68KB (budget 180KB)
 - **Performance** · `perf.asset-caching` — vercel.json sets immutable long-lived caching for static assets
-- **Content** · `content.claims-confirmed` — 7 factual claim(s) present; claimsVerifiedByClient is true, so the client has signed these off: insurance/accreditation claim: "Fully insured"; rating claim: "Rated 5.0"; free-offer claim: "free quote"; price claim: "£1"; price claim: "£380"; price claim: "£300,"; …
+- **Content** · `content.claims-confirmed` — 6 factual claim(s) present; claimsVerifiedByClient is true, so the client has signed these off: insurance/accreditation claim: "Fully insured"; rating claim: "Rated 5.0"; free-offer claim: "free quote"; price claim: "£1"; price claim: "£300,"; price claim: "£120"
 - **AI Search** · `ai.structure-checked` — Answer-engine readiness checked on 19 indexable page(s): question headings, semantic landmarks, schema-backed entities
 
 ---

@@ -27,7 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-sans.woff2" crossorigin>
 <link rel="preload" as="image" href="assets/photos/img_6841-m.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" href="assets/photos/img_6841.webp" media="(min-width:701px)" fetchpriority="high">
-<link rel="stylesheet" href="assets/site.css?v=4">
+<link rel="stylesheet" href="assets/site.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -206,37 +206,21 @@
       <span style="font-size:13px;color:var(--dim)">Lines open 7 days · 7:30am–9pm</span>
     </div>
 
-    <!-- QUOTE CARD -->
+    <!-- QUOTE SERVICE SELECTOR -->
     <div id="quote" class="quote-card" style="scroll-margin-top:100px">
       <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
-        <h2 style="font-family:Sora,sans-serif;font-size:21px;margin:0;letter-spacing:-.01em">Get an instant quote</h2>
+        <h2 style="font-family:Sora,sans-serif;font-size:21px;margin:0;letter-spacing:-.01em">Get your instant quote</h2>
         <span style="font-size:12px;color:var(--gold);font-weight:600">~60 seconds</span>
       </div>
-      <p style="font-size:13.5px;color:var(--dim);margin:0 0 18px">Fixed price confirmed within the hour. No obligation.</p>
-      <form id="quoteForm">
-        <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Company<input id="qHoney" name="_honey" type="text" tabindex="-1" autocomplete="off"></label></div>
-        <div class="q-grid">
-          <label class="field">Property type
-            <select id="qProperty"><option value="house">House</option><option value="flat">Flat / apartment</option><option value="office">Office</option><option value="van">Man &amp; van / single item</option><option value="waste">Waste clearance</option></select>
-          </label>
-          <label class="field">Bedrooms
-            <select id="qBeds"><option value="0">Studio</option><option value="1">1 bedroom</option><option value="2" selected>2 bedrooms</option><option value="3">3 bedrooms</option><option value="4">4+ bedrooms</option></select>
-          </label>
-          <label class="field">Moving from (postcode)<input id="qFrom" placeholder="e.g. BR1 3AA"></label>
-          <label class="field">Moving to (postcode)<input id="qTo" placeholder="e.g. DA1 2BQ"></label>
-          <label class="field">Moving date<input id="qDate" type="date"></label>
-          <label class="field">Name<input id="qName" placeholder="Your name"></label>
-          <label class="field full">Phone or email<input id="qContact" placeholder="So we can confirm your fixed price"></label>
-        </div>
-        <div id="estimateBox" class="estimate" style="display:none">
-          <div><div style="font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em">Estimated range</div><div class="val" id="estimateVal">£380 – £560</div></div>
-          <div style="font-size:12.5px;color:var(--muted);max-width:20ch;text-align:right">Exact fixed quote confirmed by our team within 1 hour</div>
-        </div>
-        <button id="quoteBtn" type="button" class="btn btn-primary" style="margin-top:16px;width:100%;font-size:15.5px;padding:15px">Get my fixed quote →</button>
-        <p id="quoteThanks" role="alert" aria-live="polite" style="display:none;margin:12px 0 0;font-size:13.5px;color:#7FD49A;text-align:center">✓ Thanks — we'll be in touch within the hour to confirm your fixed price.</p>
-        <p style="margin:14px 0 0;font-size:12px;color:var(--dim);text-align:center">Prefer to talk? <a href="tel:07777622437">Call 07777 622437</a> or <a href="https://wa.me/447777622437">WhatsApp us</a></p>
-        <p style="margin:10px 0 0;font-size:11.5px;color:var(--dim);text-align:center">We use your details only to reply to this enquiry — see our <a href="/privacy">privacy policy</a>.</p>
-      </form>
+      <p style="font-size:13.5px;color:var(--dim);margin:0 0 16px">What are you moving? Pick a service for a tailored price — fixed and confirmed within the hour.</p>
+      <div class="svc-pick">
+        <a href="/get-a-quote?s=house" class="svc-pick-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span><span class="l">House removals</span><span class="s">Home moves, any size</span></a>
+        <a href="/get-a-quote?s=office" class="svc-pick-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="12" height="18"/><path d="M16 8h4v13H4"/><path d="M8 7h0M12 7h0M8 11h0M12 11h0M8 15h0M12 15h0"/></svg></span><span class="l">Office removals</span><span class="s">Workplace &amp; commercial</span></a>
+        <a href="/get-a-quote?s=single" class="svc-pick-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v11H3z"/><path d="M14 9h4l3 3v5h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span><span class="l">Single item</span><span class="s">Sofa, bed, appliance</span></a>
+        <a href="/get-a-quote?s=waste" class="svc-pick-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 10v6M14 10v6"/></svg></span><span class="l">Waste clearance</span><span class="s">Rubbish &amp; furniture</span></a>
+      </div>
+      <a href="/get-a-quote" class="btn btn-primary" style="margin-top:16px;width:100%;font-size:15px;padding:14px;text-align:center">Start my quote →</a>
+      <p style="margin:14px 0 0;font-size:12px;color:var(--dim);text-align:center">Prefer to talk? <a href="tel:07777622437">Call 07777 622437</a> or <a href="https://wa.me/447777622437">WhatsApp us</a></p>
     </div>
   </div>
 </section>

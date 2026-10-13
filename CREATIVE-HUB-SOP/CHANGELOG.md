@@ -176,3 +176,14 @@ chqa: Content PASS, Schema PASS, GATE APPROVED FOR PRODUCTION.
 
 Next (needs client): GBP optimisation + reviews, Bing Webmaster, citations,
 waste-carrier licence, cornerstone guides. Still no fabricated local claims.
+
+---
+
+## 2026-10-13 — Homepage hero: 4-service quote selector
+
+Replaced the legacy house-only inline hero form with a 4-service selector
+(House / Office / Single item / Waste clearance) that routes each choice into the
+tailored engine via /get-a-quote?s=<service>. One consistent quote system; clears
+the index legacy-form warning; keeps the LCP hero fast (no engine on the homepage).
+Added .svc-pick styles (dark-glass, on-brand); bumped site.css -> v6.
+Verified in-browser (4 cards, correct deep-links, no legacy form). chqa: APPROVED.
