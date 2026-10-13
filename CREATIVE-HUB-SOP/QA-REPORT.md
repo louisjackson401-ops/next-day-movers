@@ -2,8 +2,8 @@
 
 **Project:** Next Day Movers  
 **Repository:** `/Users/louisjackson/Next Day Movers web`  
-**Commit:** `1184fdc`  
-**Run:** 2026-10-13 18:55 UTC  
+**Commit:** `3a730d2`  
+**Run:** 2026-10-13 19:11 UTC  
 **Engine:** creative-hub-qa 1.0.0 — 66 checks across 20 page(s)
 
 ---
@@ -111,8 +111,8 @@ _Each of these was actually inspected or measured in this run._
 - **Code Quality** · `html.structure` — 20 page(s) parsed: doctype, lang, ids, headings and landmarks all clean
 - **Technical SEO** · `seo.title-unique-count` — 19 indexable page(s) carry a <title>
 - **Schema** · `schema.parsed` — 340 JSON-LD node(s) parsed successfully across 20 page(s)
-- **Links** · `links.internal-resolved` — 772 internal link(s) resolved across 20 page(s)
-- **Images** · `img.inspected` — 107 image reference(s) resolved to real files and measured
+- **Links** · `links.internal-resolved` — 775 internal link(s) resolved across 20 page(s)
+- **Images** · `img.inspected` — 110 image reference(s) resolved to real files and measured
 - **Accessibility** · `a11y.static-checks` — Static accessibility checks run across 20 page(s): control labels, accessible names, focus order, zoom, motion
 - **Security** · `sec.secret-scan` — 33 text file(s) scanned against 11 credential patterns
 - **Security** · `sec.header` — vercel.json sets strict-transport-security

@@ -187,3 +187,12 @@ tailored engine via /get-a-quote?s=<service>. One consistent quote system; clear
 the index legacy-form warning; keeps the LCP hero fast (no engine on the homepage).
 Added .svc-pick styles (dark-glass, on-brand); bumped site.css -> v6.
 Verified in-browser (4 cards, correct deep-links, no legacy form). chqa: APPROVED.
+
+---
+
+## 2026-10-13 — Added real office-move photos
+
+Client supplied 3 genuine office photos. Optimised to webp (205–231KB) and placed
+where office moves appear: the Services "Office & commercial moves" section image
+(office-move-1) and 3 new entries in the gallery lightbox. Descriptive alt text,
+lazy-loaded. chqa: APPROVED FOR PRODUCTION.
