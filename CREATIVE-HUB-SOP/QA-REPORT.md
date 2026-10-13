@@ -2,9 +2,9 @@
 
 **Project:** Next Day Movers  
 **Repository:** `/Users/louisjackson/Next Day Movers web`  
-**Commit:** `3a730d2`  
-**Run:** 2026-10-13 19:11 UTC  
-**Engine:** creative-hub-qa 1.0.0 — 66 checks across 20 page(s)
+**Commit:** `fea0ce1`  
+**Run:** 2026-10-13 19:28 UTC  
+**Engine:** creative-hub-qa 1.0.0 — 67 checks across 20 page(s)
 
 ---
 
@@ -16,15 +16,15 @@
 | Critical | 0 |
 | High | 0 |
 | Medium | 1 |
-| Low | 25 |
-| Warnings | 26 |
+| Low | 26 |
+| Warnings | 27 |
 | Not verified | 13 |
 
 ## Category status
 
 | Category | Status | Fails | Warnings | Not verified |
 |---|---|---|---|---|
-| AI Search | WARNING | 0 | 4 | 1 |
+| AI Search | WARNING | 0 | 5 | 1 |
 | Accessibility | PASS | 0 | 0 | 2 |
 | Code Quality | PASS | 0 | 0 | 0 |
 | Content | PASS | 0 | 0 | 0 |
@@ -40,7 +40,7 @@
 | Sitemap | PASS | 0 | 0 | 1 |
 | Technical SEO | WARNING | 0 | 4 | 0 |
 
-## Warnings — below standard (26)
+## Warnings — below standard (27)
 
 - **Forms** · `form.js-only-submit` `medium` — contact.html: form submits only via JavaScript — with JS disabled or broken, the enquiry is silently lost
 - **Technical SEO** · `seo.og-missing` `low` — 404.html: missing og:title
@@ -66,6 +66,7 @@
 - **Images** · `img.unreferenced` `low` — 9 image file(s) totalling 1111KB are not referenced by any page
 - **AI Search** · `ai.no-question-headings` `low` — contact.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — gallery.html: no question-form headings — answer engines extract answers from question/answer structure
+- **AI Search** · `ai.no-question-headings` `low` — get-a-quote.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-question-headings` `low` — terms.html: no question-form headings — answer engines extract answers from question/answer structure
 - **AI Search** · `ai.no-authorship` `low` — No authorship signal anywhere on the site — weakens E-E-A-T for content pages
 
